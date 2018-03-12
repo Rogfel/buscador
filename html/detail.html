@@ -1,0 +1,21 @@
+{% load comments %}
+
+<h1>{{article.name}}</h1>
+<p><b>Content:</b><br/>
+{{article.value}}</p>
+
+<hr/>
+
+<b>Current comments:</b> <br/>
+
+{% get_comment_count for article as comment_count %}
+
+Total: {{comment_count}} <br/>
+
+{% render_comment_list for article %}
+
+<br/>
+<hr/>
+
+<b>Submit comments:</b>
+{% render_comment_form for article %}
